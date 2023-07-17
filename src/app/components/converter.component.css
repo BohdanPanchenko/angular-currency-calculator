@@ -1,0 +1,153 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 25px;
+  background-image: url("../../assets/bg.jpg");
+}
+/* ------------------HEADER------------------ */
+.header {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  margin-bottom: 150px;
+}
+.exchange-rates {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(0, 40, 85);
+  border-collapse: collapse;
+  width: 60%;
+  border: 1px solid rgb(0, 40, 85);
+  box-shadow: 2px 2px 4px #0028554d;
+}
+.table-capture {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px 15px;
+}
+
+.table-header {
+  background-color: rgb(0, 40, 85);
+}
+tbody .table-row:nth-child(even) {
+  background-color: #eee;
+}
+tbody .table-row:nth-child(add) {
+  background-color: #fff;
+}
+.table-row > * {
+  text-align: center;
+}
+.table-header .table-data {
+  color: #fff;
+}
+.table-data {
+  padding: 10px 15px;
+  border: 1px solid #d7d7d7;
+  font-weight: 500;
+}
+
+/* ------------------SECTION------------------ */
+.converter {
+  background-color: #f9fafb;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #0028554d;
+  margin: 0 auto;
+  max-width: fit-content;
+  padding: 50px 30px;
+}
+.calculator {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+  align-items: center;
+}
+.calculator-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.calculator-item {
+  /* border: 1px solid #e5e9ee; */
+  position: relative;
+  box-shadow: 0 0 0 1.5px #002855;
+  border-radius: 4px;
+  padding: 0 25px;
+  display: flex;
+}
+.calculator-item.active {
+  box-shadow: 0 0 0 2.5px #002855;
+}
+select {
+}
+.currency-options {
+  padding: 15px 70px 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #002855;
+  border: none;
+  border-right: 1.5px solid #002855;
+  appearance: none;
+  background-color: transparent;
+  outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='15' height='8' viewBox='0 0 15 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.0909 0.607892L14.1481 1.13649L7.99219 7.2924L1.83627 1.13649L2.89346 0.607892L7.63864 5.35306L7.99219 5.70662L8.34574 5.35306L13.0909 0.607892Z' fill='%23737373' stroke='%23002855'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  cursor: pointer;
+}
+
+input {
+  font-size: 18px;
+  font-weight: 500;
+  color: #002855;
+  padding: 0 15px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+label {
+  position: absolute;
+  background-color: #f9fafb;
+  top: -13px;
+  left: 10px;
+  padding: 2px;
+}
+.exchange-button {
+  align-self: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml, %3Csvg fill='rgb(0, 40, 85)' height='40px' width='40px' version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 477.427 477.427' xml:space='preserve' %3E%3Cg%3E%3Cpolygon points='101.82,187.52 57.673,143.372 476.213,143.372 476.213,113.372 57.181,113.372 101.82,68.733 80.607,47.519 0,128.126 80.607,208.733 ' /%3E%3Cpolygon points='396.82,268.694 375.607,289.907 420,334.301 1.213,334.301 1.213,364.301 420,364.301 375.607,408.694 396.82,429.907 477.427,349.301 ' /%3E%3C/g%3E%3C/svg%3E");
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.exchange-button:hover {
+  transform: rotate(180deg);
+}
+.to-value {
+  position: absolute;
+}
+.calculate-button {
+  align-self: flex-end;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  padding: 15px 39px;
+  border-radius: 4px;
+  border: none;
+  background-color: #002855;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.calculate-button:hover {
+  opacity: 0.7;
+}
