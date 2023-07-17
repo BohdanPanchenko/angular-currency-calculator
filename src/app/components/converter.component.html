@@ -1,0 +1,117 @@
+<div class="container">
+  <header class="header">
+    <table class="exchange-rates">
+      <caption class="table-capture">
+        Exchange Rates
+      </caption>
+      <thead class="table-header">
+        <tr class="table-row">
+          <th class="table-data">Letter code</th>
+          <th class="table-data">Unit</th>
+          <th class="table-data">Currency name</th>
+          <th class="table-data">UAH</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-row">
+          <td class="table-data">USD</td>
+          <td class="table-data">1</td>
+          <td class="table-data">US Dollar</td>
+          <td class="table-data">
+            {{
+              currenciesValues ? currenciesValues.data.USD.value.toFixed(4) : ""
+            }}
+          </td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-data">EUR</td>
+          <td class="table-data">1</td>
+          <td class="table-data">Euro</td>
+          <td class="table-data">
+            {{
+              currenciesValues ? currenciesValues.data.EUR.value.toFixed(4) : ""
+            }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </header>
+  <section class="converter">
+    <div class="calculator">
+      <div class="calculator-items">
+        <div
+          class="{{
+            inputFocused === 'from' && !offFocus
+              ? 'calculator-item active'
+              : 'calculator-item'
+          }}"
+        >
+          <select
+            name="currency-options"
+            [(ngModel)]="fromCode"
+            class="currency-options"
+            (change)="onOptionChange($event)"
+          >
+            <option
+              *ngFor="let option of currenciesCodes"
+              value="{{ option }}"
+              selected="{{ option === fromCode ? 'selected' : null }}"
+              disabled="{{ option === toCode ? 'disabled' : null }}"
+            >
+              {{ option }}
+            </option>
+          </select>
+          <input
+            type="text"
+            id="from-value"
+            [value]="inputValues['from']"
+            (input)="onInputHandler($event)"
+            (focus)="onFocusHandler($event)"
+            data-name="from"
+            maxlength="12"
+          />
+          <label for="from-value" class="from-label">From</label>
+        </div>
+        <button
+          type="button"
+          class="exchange-button"
+          (click)="reverseCodes()"
+        ></button>
+        <div
+          class="{{
+            inputFocused !== 'from' && !offFocus
+              ? 'calculator-item active'
+              : 'calculator-item'
+          }}"
+        >
+          <select
+            name="currency-options"
+            [(ngModel)]="toCode"
+            class="currency-options"
+            (change)="onOptionChange($event)"
+          >
+            <option
+              *ngFor="let option of currenciesCodes"
+              value="{{ option }}"
+              selected="{{ option === toCode ? 'selected' : null }}"
+              disabled="{{ option === fromCode ? 'disabled' : null }}"
+            >
+              {{ option }}
+            </option>
+          </select>
+          <input
+            type="text"
+            id="to-value"
+            [value]="inputValues['to']"
+            (input)="onInputHandler($event)"
+            (focus)="onFocusHandler($event)"
+            data-name="to"
+            maxlength="12"
+          />
+          <label for="to-value" class="to-label">To</label>
+        </div>
+      </div>
+      <button title="Для красоты " class="calculate-button">Submit</button>
+    </div>
+  </section>
+</div>
