@@ -19,7 +19,7 @@
           <td class="table-data">US Dollar</td>
           <td class="table-data">
             {{
-              currenciesValues ? (1/currenciesValues.data.USD.value.toFixed(4)) : ""
+              currenciesValues ? (1/currenciesValues.data.USD.value).toFixed(2) : ""
             }}
           </td>
         </tr>
@@ -29,7 +29,7 @@
           <td class="table-data">Euro</td>
           <td class="table-data">
             {{
-              currenciesValues ? (1/currenciesValues.data.EUR.value.toFixed(4)) : ""
+              currenciesValues ? (1/currenciesValues.data.EUR.value).toFixed(2) : ""
             }}
           </td>
         </tr>
